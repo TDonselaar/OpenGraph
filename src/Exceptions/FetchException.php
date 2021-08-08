@@ -1,6 +1,6 @@
 <?php
 
-namespace shweshi\OpenGraph\Exceptions;
+namespace tdonselaar\OpenGraph\Exceptions;
 
 class FetchException extends \Exception
 {

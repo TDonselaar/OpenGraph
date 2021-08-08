@@ -1,6 +1,6 @@
 <?php
 
-namespace shweshi\OpenGraph\Providers;
+namespace tdonselaar\OpenGraph\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -24,7 +24,7 @@ class OpenGraphProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('OpenGraph', function () {
-            return new \shweshi\OpenGraph\OpenGraph();
+            return new \tdonselaar\OpenGraph\OpenGraph();
         });
     }
 }

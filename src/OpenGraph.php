@@ -1,9 +1,9 @@
 <?php
 
-namespace shweshi\OpenGraph;
+namespace tdonselaar\OpenGraph;
 
 use DOMDocument;
-use shweshi\OpenGraph\Exceptions\FetchException;
+use tdonselaar\OpenGraph\Exceptions\FetchException;
 
 class OpenGraph
 {
