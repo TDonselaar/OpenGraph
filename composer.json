@@ -1,15 +1,23 @@
 {
-  "name": "shweshi/opengraph",
+  "name": "TDonselaar/opengraph",
   "description": "A Laravel package to fetch website Open Graph metadata.",
   "type": "library",
   "authors": [
     {
       "name": "Shashi Prakash Gautam",
       "email": "contactmespg@gmail.com"
+    },
+    {
+      "name": "Tim Donselaar",
+      "email": "timdonselaar@gmail.com"
     }
   ],
   "require": {
-    "illuminate/log": "^5.0|^6.0|^7.0|^8.0"
+    "illuminate/log": "^5.0|^6.0|^7.0|^8.0",
+    "ext-dom": "*",
+    "ext-libxml": "*",
+    "ext-curl": "*",
+    "ext-json": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "4.8.*"
@@ -17,12 +25,12 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "shweshi\\OpenGraph\\": "src/"
+      "TDonselaar\\OpenGraph\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "shweshi\\OpenGraph\\Test\\": "tests"
+      "TDonselaar\\OpenGraph\\Test\\": "tests"
     }
   },
   "scripts": {
@@ -31,10 +39,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "shweshi\\OpenGraph\\Providers\\OpenGraphProvider"
+        "TDonselaar\\OpenGraph\\Providers\\OpenGraphProvider"
       ],
       "aliases": {
-        "OpenGraph": "shweshi\\OpenGraph\\Facades\\OpenGraphFacade"
+        "OpenGraph": "TDonselaar\\OpenGraph\\Facades\\OpenGraphFacade"
       }
     }
   }

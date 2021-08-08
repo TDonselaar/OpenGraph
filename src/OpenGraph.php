@@ -51,6 +51,31 @@ class OpenGraph
             }
         }
 
+        //get the lang from the html tag
+        $tags = $doc->getElementsByTagName('html');
+        foreach ($tags as $tag) {
+            if($tag->hasAttribute('lang')){
+                $metadata['html_lang'] = $tag->getAttribute('lang');
+            }
+        }
+
+        //Parse schema.org data
+        $tags = $doc->getElementsByTagName('script');
+        /** @var \DOMNode $tag */
+        foreach ($tags as $tag) {
+            if($tag->hasAttribute('type') && $tag->getAttribute('type') == "application/ld+json"){
+                $tempJson = json_decode(trim($tag->nodeValue), true);
+                if(isset($tempJson['@context']) && $tempJson['@context'] == "http://schema.org"){
+                    if(!isset($metadata['schema_org'])){ $metadata['schema_org'] = []; }
+                    if(!isset($tempJson['@type'])){ continue; }
+                    $metadata['schema_org'][$tempJson['@type']] = [];
+                    foreach ($tempJson as $key => $value){
+                        $metadata['schema_org'][$tempJson['@type']][$key] = $value;
+                    }
+                }
+            }
+        }
+
         return $metadata;
     }
 
