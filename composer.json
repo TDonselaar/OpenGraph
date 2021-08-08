@@ -1,5 +1,5 @@
 {
-  "name": "TDonselaar/opengraph",
+  "name": "tdonselaar/opengraph",
   "description": "A Laravel package to fetch website Open Graph metadata.",
   "type": "library",
   "authors": [
@@ -25,12 +25,12 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "TDonselaar\\OpenGraph\\": "src/"
+      "tdonselaar\\OpenGraph\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "TDonselaar\\OpenGraph\\Test\\": "tests"
+      "tdonselaar\\OpenGraph\\Test\\": "tests"
     }
   },
   "scripts": {
@@ -39,10 +39,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "TDonselaar\\OpenGraph\\Providers\\OpenGraphProvider"
+        "tdonselaar\\OpenGraph\\Providers\\OpenGraphProvider"
       ],
       "aliases": {
-        "OpenGraph": "TDonselaar\\OpenGraph\\Facades\\OpenGraphFacade"
+        "OpenGraph": "tdonselaar\\OpenGraph\\Facades\\OpenGraphFacade"
       }
     }
   }
